@@ -1,27 +1,56 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a demo of the prototype for Buzzboard a project co-designed at a Noob-Hack
 
-Things you may want to cover:
+Here are the steps I used to make it and I'll add more as I go, along with some considerations.
+If there anything that doesn't make sense or something you could add please feel free to edit this readme.
+Please note that this is using Linux and instructions may differ
 
-* Ruby version
+Part 1 setting up your machine
+ - Create a Github Account
+ - Ensure rails and ruby are installed and at the latest version
+  - ruby -v
+   - in the command line gives you ruby 1.9.3p194 (2012-04-20 revision 35410) [x86_64-linux]
+   - if not see https://www.ruby-lang.org/en/downloads/   for install instructions
+  - rails -v
+    - in the command line should give you Rails 4.0.2
+    - if not run sudo gem install rails
+ - Anytime if you're not sure what to write in the command line you can type --help
+    - example "rails --help" "rails new --help"
+    - and it will give you a list of options and explanations
+ - Anytime if you want to check your progress in your browser run this in the command line:
+   - rails server
+  - Then go to this in your browser
+   - http://localhost:3000/
 
-* System dependencies
+Part 2 creating a project in Rails - Buzzboard
+ - Create a repo in github
+ - In the command line write:
+  - rails new buzzboard 
+   - note that 'buzzboard' is the name of the project, this could be anything
+   - this creates a folder called buzzboard and many files
+  - cd buzzboard
+   - important to move into the right folder for this
+  - Follow the instructions in your new git repo (may have to refresh the page, should be similar to this)
+   - git init
+   - git add .
+   - git commit . -m "started buzzboard project"
+   - git remote add github ...(uri from github got here, not I used github instead of origin)
+   - git push -u github master
+ - Can check this out in in the browser by running the server, look through some files in sublime text and githhub
+ 
+Part 3 adding "topics" to Buzzboard
+ - Part of our brainstorming meant we wanted topics as a feature in our project. Each topic should have:
+  - Title, interest(teaching/learning) and a longer description
+ - Rails can generate the code, files and database for this using these commands on the command line:
+  - rails generate scaffold topic title interest body:text
+   - after the scaffold should go the name (topic) then what features it has
+   - note by default all features are "strings" if you add :text it gives it the type text so you can type more in
+  - rake db:migrate
+   - this creates the database we'll be using
+ - You can now see this page in the browser http://localhost:3000/topics (ensure your rails server is still going)
+   
+Add 
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+rails c
+dog = Topic.new(title:"Dogs", interest:"learn", body:"I would like to learn more about dogs")
