@@ -27,10 +27,10 @@ Part 2 creating a project in Rails - Buzzboard
  - Create a repo in github
  - In the command line write:
   - rails new buzzboard 
-   - note the buzzboard in the name of the project, this could be anything
+   - note that 'buzzboard' is the name of the project, this could be anything
    - this creates a folder called buzzboard and many files
   - cd buzzboard
-   - importand to move into the right folder for this
+   - important to move into the right folder for this
   - Follow the instructions in your new git repo (may have to refresh the page, should be similar to this)
    - git init
    - git add .
