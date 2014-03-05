@@ -74,10 +74,10 @@ Part B intermediate:
 
 Extras
 You can test out your new classes using ruby on the command line
--rails console
- - Opens up a ruby console to type and test commands
- - ctrl d to quit
--dog = Topic.new(title:"Dogs", interest:"learn", body:"I would like to learn more about dogs")
- - should set up a new topic about dogs
--dog.save
- - this will save your topic to the database, which you'll be able to see when you refresh your browser
+ -rails console
+  - Opens up a ruby console to type and test commands
+  - ctrl d to quit
+ -dog = Topic.new(title:"Dogs", interest:"learn", body:"I would like to learn more about dogs")
+  - should set up a new topic about dogs
+ -dog.save
+  - this will save your topic to the database, which you'll be able to see when you refresh your browser
