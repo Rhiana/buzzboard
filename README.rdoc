@@ -39,12 +39,12 @@ Part 2 creating a project in Rails - Buzzboard
    - git push -u github master
  - Can check this out in in the browser by running the server, look through some files in sublime text and githhub
  
-Part 3 adding "topics" to Buzzboard
+Part 3 adding "topics" and "users" to Buzzboard
  - Part of our brainstorming meant we wanted topics as a feature in our project. Each topic should have:
   - Title, interest(teaching/learning) and a longer description
   - Please note rails is case sensitive and sensitive to pluralisation, please try to follow the patterns in the exampls given
 
-Option A for beginners:
+Part A beginners:
  - Rails can generate the code, files and database for this using these commands on the command line. This method is used primarily in tutorials and when first learning rails.
   - rails generate scaffold topic title interest body:text
    - after the scaffold should go the name (topic) then what features it has
@@ -56,17 +56,21 @@ Option A for beginners:
     - git add .
     - git commit . -am "added topic scaffold"
 
-Option B for intermediate:
- - Rails can generate the code, files and database for this using these commands on the command line. This uses the model, view, controller method. We'll be generating them each individually instead of all at once as in option A. This develops a deeper understanding and more authentic rails experience.
-  - rails generate model topic title interest body:text
+Part B intermediate:
+ - Next we will create the user model. You can do this using the following steps or by repeating part A but with "rails generate scaffold user name email password" instead. 
+ - This uses the model, view, controller method. We'll be generating them each individually instead of all at once as in option A. This develops a deeper understanding and more authentic rails experience.
+  - rails generate model user name email password
+   - This generates the model which is used to generate and access the database
   - rake db:migrate
-   - this creates the database we'll be using, need to redo this everytime you start it on a new computer or change the migration file
- - You can now see this page in the browser http://localhost:3000/topics (ensure your rails server is still going)
  - Rememeber to save your changes regulary by typing this into the console
     - git add .
-    - git commit . -am "added topic scaffold"
- - rails generate controller Topics show index new edit create update destroy
+    - git commit . -am "added user model"
+ - rails generate controller Users show index new edit create update destroy
   - this starts the controller off with the 7 standard controller actions. It also creates view files for each one
+    - git add .
+    - git commit . -am "added user controller"
+ - You can now see this page in the browser http://localhost:3000/users, they will currently be empty
+ - Now you can go into your text editor and start coding your user controller and user views files. Use the topics files already generate by the scaffold as a guide. 
 
 Extras
 You can test out your new classes using ruby on the command line
