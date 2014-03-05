@@ -42,15 +42,26 @@ Part 2 creating a project in Rails - Buzzboard
 Part 3 adding "topics" to Buzzboard
  - Part of our brainstorming meant we wanted topics as a feature in our project. Each topic should have:
   - Title, interest(teaching/learning) and a longer description
- - Rails can generate the code, files and database for this using these commands on the command line:
+
+Option A for beginners:
+ - Rails can generate the code, files and database for this using these commands on the command line. This method is used primarily in tutorials and when first learning rails.
   - rails generate scaffold topic title interest body:text
    - after the scaffold should go the name (topic) then what features it has
    - note by default all features are "strings" if you add :text it gives it the type text so you can type more in
   - rake db:migrate
    - this creates the database we'll be using
  - You can now see this page in the browser http://localhost:3000/topics (ensure your rails server is still going)
-   
-Add 
 
-rails c
-dog = Topic.new(title:"Dogs", interest:"learn", body:"I would like to learn more about dogs")
+Option B for intermediate:
+ - Rails can generate the code, files and database for this using these commands on the command line. This uses the model, view, controller method. We'll be generating them each individually instead of all at once as in option A. This develops a deeper understanding and more authentic rails experience.
+  - 
+
+Extras
+You can test out your new classes using ruby on the command line
+-rails console
+ - Opens up a ruby console to type and test commands
+ - ctrl d to quit
+-dog = Topic.new(title:"Dogs", interest:"learn", body:"I would like to learn more about dogs")
+ - should set up a new topic about dogs
+-dog.save
+ - this will save your topic to the database, which you'll be able to see when you refresh your browser
